@@ -56,11 +56,11 @@ app.post('/createdJobs',async(req,res)=>{
 })
 app.get('/createdJobs',async(req,res)=>{
   console.log(req.query.email);
-  let query={};
-  if(req.query?.email){
-    query={email:req.query?.email}
-  }
-    const result=await myJobs.find(query).toArray();
+  // let query={};
+  // if(req.query?.email){
+  //   query={email:req.query?.email}
+  // }
+    const result=await myJobs.find().toArray();
     res.send(result)
 })
 
