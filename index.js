@@ -5,7 +5,12 @@ require('dotenv').config();
 const app=express();
 const port=process.env.PORT || 5000;
 // middleware
-app.use(cors());
+// 
+app.use(cors({
+  origin: ['http://localhost:5173',"https://job-space-60860.web.app","https://job-space-60860.firebaseapp.com"],
+  credentials: true,
+}))
+
 app.use(express.json());
 
 app.get('/',(req,res)=>{
